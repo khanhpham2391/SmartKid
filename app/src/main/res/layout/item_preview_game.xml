@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameInfo"
+            type="com.khanhpham.smartkidz.data.models.Games" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/ivPGameIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="300dp"
+            app:imageUrl="@{gameInfo.image}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/no_image}" />
+
+
+        <TextView
+            android:id="@+id/tvPGameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/rancho"
+            android:text="@{gameInfo.name}"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPGameIcon"
+            tools:text="Word Station" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView8"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="200dp"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginTop="180dp"-->
+        <!--            android:layout_marginEnd="220dp"-->
+        <!--            android:scaleType="centerInside"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:srcCompat="@drawable/kids" />-->
+
+        <!--        <include-->
+        <!--            android:id="@+id/secondary"-->
+        <!--            layout="@layout/item_difficulty"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:layout_marginBottom="8dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tvPGameName"-->
+        <!--            bind:difficultyChoice="@{gameInfo.difficultiesCollection}" />-->
+
+<!--        <RadioGroup-->
+<!--            android:id="@+id/RGDiff"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvPGameName">-->
+
+<!--            <ToggleButton-->
+<!--                android:id="@+id/btnDiffToggle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="@drawable/d_button_selector"-->
+<!--                android:elevation="8dp"-->
+<!--                android:fontFamily="@font/rancho"-->
+<!--                android:text="text"-->
+<!--                android:textColor="@color/design_default_color_surface"-->
+<!--                android:textOff="toff"-->
+<!--                android:textOn="ton"-->
+<!--                android:checked="true"-->
+<!--                android:textSize="24sp" />-->
+<!--            <ToggleButton-->
+<!--                android:id="@+id/btnDiffToggle2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="@drawable/d_button_selector"-->
+<!--                android:elevation="8dp"-->
+<!--                android:fontFamily="@font/rancho"-->
+<!--                android:text="text"-->
+<!--                android:textColor="@color/design_default_color_surface"-->
+<!--                android:textOff="toff"-->
+<!--                android:textOn="ton"-->
+<!--                android:textSize="24sp" />-->
+
+
+
+<!--        </RadioGroup>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

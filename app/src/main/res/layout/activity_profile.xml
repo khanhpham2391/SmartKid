@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kidzplaying" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/title_holder"
+        android:fontFamily="@font/rancho"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfileBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/white_border_brown"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/no_image" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_shadow_press"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <ImageView
+            android:id="@+id/profileLevelIcon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileImage"
+            app:srcCompat="@drawable/levelbear" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage">
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/rancho"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="24sp"
+                tools:text="Nick Name: KhanhPham" />
+
+            <TextView
+                android:id="@+id/profileFullname"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/rancho"
+                android:layout_marginStart="16dp"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp"
+                tools:text="Fullname: KhanhPham" />
+            <TextView
+                android:id="@+id/profileLevel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/rancho"
+                android:layout_marginStart="16dp"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp"
+                tools:text="Level: Owl" />
+
+            <TextView
+                android:id="@+id/profileGender"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/rancho"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp"
+                tools:text="Gender: Male" />
+
+            <TextView
+                android:id="@+id/profilePoint"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/rancho"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp"
+                tools:text="Score: 200pts"
+                android:text="TextView" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:elevation="8dp">
+
+                <Button
+                    android:id="@+id/btnProfileRegister"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shadow_press"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:fontFamily="@font/rancho"
+                    android:text="Register"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shadow_press"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:fontFamily="@font/rancho"
+                    android:text="Change Photo"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    tools:ignore="NestedWeights" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnProfileCommunity"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:padding="3dp"
+                android:background="@drawable/button_shadow_press"
+                android:fontFamily="@font/rancho"
+                android:text="Community"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnProfileBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/whiteTransparentButton"
+        android:fontFamily="@font/rancho"
+        android:text="@string/back"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

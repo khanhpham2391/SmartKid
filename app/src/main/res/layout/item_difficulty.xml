@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="difficultyChoice"
+            type="com.khanhpham.smartkidz.data.models.Difficulty" />
+    </data>
+
+
+    <ToggleButton
+        android:id="@+id/toggle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/d_button_selector"
+        android:elevation="8dp"
+        android:fontFamily="@font/rancho"
+        android:text="@{difficultyChoice.name}"
+        android:textOn="@{difficultyChoice.name}"
+        android:textOff="@{difficultyChoice.name}"
+        android:textColor="@color/design_default_color_surface"
+        android:textSize="24sp" />
+
+</layout>

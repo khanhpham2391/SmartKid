@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SmartKidz</string>
+    <string name="preference_file_key">App Content</string>
+    <string name="user_id_key">userId</string>
+    <string name="play_games">Play Games</string>
+    <string name="logo">logo</string>
+    <string name="background">background</string>
+    <string name="view_leader_board">View Leader Board</string>
+    <string name="view_history">View History</string>
+    <string name="view_profile">View Profile</string>
+    <string name="leader_board">Leader Board</string>
+    <string name="history">History</string>
+    <string name="back">Back</string>
+    <string name="no_history_found">No history found!</string>
+    <string name="no_record_found">No record found</string>
+    <string name="choose_a_username">Choose a username:</string>
+    <string name="go">Go!</string>
+    <string name="error_loading">Error loading!</string>
+    <string name="localhost">192.168.1.107</string>
+    <string name="next">Next</string>
+    <string name="topic_background">topic background</string>
+    <string name="seconds_remaining">seconds remaining:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="finish">FINISH</string>
+    <string name="next_question">Next Question</string>
+    <string name="profile">Profile</string>
+</resources>
