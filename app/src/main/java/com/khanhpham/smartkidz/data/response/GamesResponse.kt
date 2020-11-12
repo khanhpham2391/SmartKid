@@ -16,7 +16,6 @@ data class GamesResponse(
 
 data class DifficultiesResponse(
     val id: Int,
-    val isActive: Boolean,
     val name: String,
     val requiredScore: Int,
     val timeLimit: Int,
@@ -28,8 +27,4 @@ data class TopicsResponse(
     val id: Int,
     val name: String,
     val image: String,
-    val isActive: Boolean,
-    val createdAt: Date,
-    val updatedAt: Date,
-    val gameId: GamesResponse
 )

@@ -3,11 +3,13 @@ package com.khanhpham.smartkidz.ui.game.result
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.khanhpham.smartkidz.R
 import com.khanhpham.smartkidz.data.EXTRA_GAME
 import com.khanhpham.smartkidz.data.EXTRA_POINT
 import com.khanhpham.smartkidz.data.GamesData
+import com.khanhpham.smartkidz.data.models.AppUser
 import com.khanhpham.smartkidz.data.models.GameData
 import com.khanhpham.smartkidz.data.models.History
 import com.khanhpham.smartkidz.helpers.Status
@@ -43,11 +45,12 @@ class ResultActivity : AppCompatActivity() {
         tvResult.text = "You get $correctAnswer pts"
         btnPlayAgain.setOnClickListener(playAgain)
         btnResultHome.setOnClickListener(home)
+
     }
 
     private fun observeHistory() {
-        resultViewModel.historyItem.observe(this, { history->
-            val (status, data, error, isFirst) = history
+        resultViewModel.updatedUser.observe(this, { appUser->
+            val (status, data, error, isFirst) = appUser
             when(status){
                 Status.SUCCEED -> showData(data)
                 Status.LOADING -> showLoading(isFirst)
@@ -59,16 +62,22 @@ class ResultActivity : AppCompatActivity() {
     private fun showError(error: Throwable?) {
         resultProgress.visibility = View.VISIBLE
         cvResult.visibility = View.GONE
+        Log.d("resultActivity","$error")
     }
 
     private fun showLoading(first: Boolean) {
-        resultProgress.visibility = View.VISIBLE
-        cvResult.visibility = View.GONE
+        if (first){
+            resultProgress.visibility = View.VISIBLE
+            cvResult.visibility = View.GONE
+        }
     }
 
-    private fun showData(data: History?) {
-        resultProgress.visibility = View.GONE
-        cvResult.visibility = View.VISIBLE
+    private fun showData(data: AppUser?) {
+        if (data != null) {
+            GamesData.user = data
+            resultProgress.visibility = View.GONE
+            cvResult.visibility = View.VISIBLE
+        }
     }
 
     private val playAgain = View.OnClickListener{

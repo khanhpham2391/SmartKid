@@ -34,11 +34,11 @@
             android:layout_height="150dp"
             android:layout_marginStart="24dp"
             android:scaleType="fitStart"
-            app:imageUrl="@{topic.image}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{topic.image}"
             app:placeholder="@{@drawable/no_image}" />
 
         <TextView

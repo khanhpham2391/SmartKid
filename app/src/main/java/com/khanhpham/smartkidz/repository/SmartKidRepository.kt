@@ -1,9 +1,6 @@
 package com.khanhpham.smartkidz.repository
 
-import com.khanhpham.smartkidz.data.models.AppUser
-import com.khanhpham.smartkidz.data.models.GameDetails
-import com.khanhpham.smartkidz.data.models.Games
-import com.khanhpham.smartkidz.data.models.History
+import com.khanhpham.smartkidz.data.models.*
 import io.reactivex.Single
 
 interface SmartKidRepository {
@@ -18,7 +15,11 @@ interface SmartKidRepository {
 
     fun getGamePlay(gameId: Int, topicId: Int, difficultyId: Int): Single<List<GameDetails>>
 
-    fun createHistory(history: History): Single<History>
+    fun createHistory(history: History): Single<AppUser>
 
     fun getHistory(): Single<List<History>>
+
+    fun getIcon(): Single<List<IconImage>>
+
+    fun getPosition(userId:Int):Single<Map<Int,AppUser>>
 }

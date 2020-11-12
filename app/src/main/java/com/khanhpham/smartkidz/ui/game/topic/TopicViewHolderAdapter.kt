@@ -43,15 +43,15 @@ class TopicAdapter(val topicList: List<Topic>, val gameData: GameData): Recycler
 
     override fun getItemCount(): Int = topicList.size
 
-//    companion object{
-//        @JvmStatic
-//        @BindingAdapter("imageUrl", "placeholder")
-//        fun loadImage(view: ImageView, imageUrl: String?, placeholder: Drawable){
-//            if (!imageUrl.isNullOrEmpty()){
-//                Glide.with(view.context).load(GamesData.urlConvert(imageUrl)).into(view)
-//            } else {
-//                view.setImageDrawable(placeholder)
-//            }
-//        }
-//    }
+    companion object{
+        @JvmStatic
+        @BindingAdapter("imageUrl", "placeholder")
+        fun loadImage(view: ImageView, imageUrl: String?, placeholder: Drawable){
+            if (!imageUrl.isNullOrEmpty()){
+                Glide.with(view.context).load(GamesData.urlConvert(imageUrl)).into(view)
+            } else {
+                view.setImageDrawable(placeholder)
+            }
+        }
+    }
 }

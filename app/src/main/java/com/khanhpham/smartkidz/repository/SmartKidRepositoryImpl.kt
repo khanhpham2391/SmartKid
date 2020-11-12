@@ -1,5 +1,6 @@
 package com.khanhpham.smartkidz.repository
 
+import android.util.Log
 import com.khanhpham.smartkidz.api_endpoint.AppUserServiceApi
 import com.khanhpham.smartkidz.data.GamesData
 import com.khanhpham.smartkidz.data.models.*
@@ -26,12 +27,20 @@ class SmartKidRepositoryImpl(private val serviceApi: AppUserServiceApi) : SmartK
         return serviceApi.getGamePlay(gameId,topicId,difficultyId)
     }
 
-    override fun createHistory(history: History): Single<History> {
+    override fun createHistory(history: History): Single<AppUser> {
         return serviceApi.createHistory(history)
     }
 
     override fun getHistory(): Single<List<History>> {
         return serviceApi.getHistory(GamesData.user.id!!)
+    }
+
+    override fun getIcon(): Single<List<IconImage>> {
+        return serviceApi.getIcon()
+    }
+
+    override fun getPosition(userId: Int): Single<Map<Int, AppUser>> {
+        return serviceApi.getPosition(userId)
     }
 
 

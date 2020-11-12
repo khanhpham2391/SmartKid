@@ -9,6 +9,11 @@ import com.khanhpham.smartkidz.ui.game.result.ResultViewModel
 import com.khanhpham.smartkidz.ui.history.HistoryActivity
 import com.khanhpham.smartkidz.ui.history.HistoryAdapter
 import com.khanhpham.smartkidz.ui.history.HistoryViewModel
+import com.khanhpham.smartkidz.ui.leaderBoard.LeaderBoardActivity
+import com.khanhpham.smartkidz.ui.leaderBoard.LeaderViewModel
+import com.khanhpham.smartkidz.ui.profile.editProfile.EditViewModel
+import com.khanhpham.smartkidz.ui.profile.profilepicture.PictureChooseActivity
+import com.khanhpham.smartkidz.ui.profile.profilepicture.PictureViewModel
 import com.khanhpham.smartkidz.ui.splash.SplashActivity
 import com.khanhpham.smartkidz.ui.splash.SplashViewModel
 import dagger.Component
@@ -26,6 +31,11 @@ interface AppComponent {
     fun inject(resultViewModel: ResultViewModel)
     fun inject(historyViewModel: HistoryViewModel)
     fun inject(historyActivity: HistoryActivity)
+    fun inject(pictureViewModel: PictureViewModel)
+    fun inject(pictureChooseActivity: PictureChooseActivity)
+    fun inject(editViewModel: EditViewModel)
+    fun inject(leaderViewModel: LeaderViewModel)
+    fun inject(leaderBoardActivity: LeaderBoardActivity)
     //fun inject(historyAdapter: HistoryAdapter)
     fun smartKidRepository(): SmartKidRepository
     fun appUserServiceApi(): AppUserServiceApi

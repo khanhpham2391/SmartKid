@@ -4,17 +4,19 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".SmartKidzApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logoicon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logoicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.profile.editProfile.EditActivity" android:theme="@style/NoActionBarMaterialTheme" />
+        <activity android:name=".ui.profile.profilepicture.PictureChooseActivity" />
         <activity android:name=".ui.game.result.ResultActivity" />
         <activity android:name=".ui.game.gamePlay.PlayActivity" />
         <activity android:name=".ui.game.topic.TopicActivity" />
@@ -22,7 +24,8 @@
         <activity android:name=".ui.game.GameActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.history.HistoryActivity" />
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name=".ui.splash.SplashActivity" android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

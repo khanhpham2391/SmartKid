@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="image"
+            type="com.khanhpham.smartkidz.data.models.IconImage" />
+    </data>
+
+    <ImageView
+        android:id="@+id/pictureImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:imageUrl="@{image.url}"
+        app:placeholder="@{@drawable/kids}"
+        app:srcCompat="@drawable/kids" />
+
+
+</layout>

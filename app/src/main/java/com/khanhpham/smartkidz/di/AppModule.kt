@@ -1,13 +1,19 @@
 package com.khanhpham.smartkidz.di
 
 import android.app.Application
+import android.util.ArrayMap
 import com.khanhpham.smartkidz.api_endpoint.AppUserServiceApi
 import com.khanhpham.smartkidz.api_endpoint.HistoryApi
+import com.khanhpham.smartkidz.data.models.AppUser
 import com.khanhpham.smartkidz.data.models.History
+import com.khanhpham.smartkidz.data.models.IconImage
 import com.khanhpham.smartkidz.helpers.NetworkInterceptor
 import com.khanhpham.smartkidz.repository.SmartKidRepository
 import com.khanhpham.smartkidz.repository.SmartKidRepositoryImpl
 import com.khanhpham.smartkidz.ui.history.HistoryAdapter
+import com.khanhpham.smartkidz.ui.leaderBoard.LeaderAdapter
+import com.khanhpham.smartkidz.ui.leaderBoard.UserAdapter
+import com.khanhpham.smartkidz.ui.profile.profilepicture.PictureAdapter
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -46,7 +52,7 @@ class AppModule(val app: Application) {
 
         return Retrofit.Builder()
             .client(client)
-            .baseUrl(AppUserServiceApi.END_POINT_API)
+            .baseUrl(AppUserServiceApi.END_POINT_API!!)
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build()
@@ -69,5 +75,35 @@ class AppModule(val app: Application) {
     @Singleton
     fun provideHistoryList(): ArrayList<History>{
         return ArrayList()
+    }
+
+    @Provides
+    @Singleton
+    fun providePictureAdapter(pictureList: ArrayList<IconImage>): PictureAdapter{
+        return PictureAdapter(pictureList)
+    }
+
+    @Provides
+    @Singleton
+    fun providePictureList(): ArrayList<IconImage>{
+        return ArrayList()
+    }
+
+    @Provides
+    @Singleton
+    fun provideLeaderAdapter(userMap: ArrayMap<Int,AppUser>): LeaderAdapter{
+        return LeaderAdapter(userMap)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLeaderList(): ArrayMap<Int,AppUser>{
+        return ArrayMap<Int,AppUser>()
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserAdapter(userMap: ArrayMap<Int,AppUser>): UserAdapter{
+        return UserAdapter(userMap)
     }
 }

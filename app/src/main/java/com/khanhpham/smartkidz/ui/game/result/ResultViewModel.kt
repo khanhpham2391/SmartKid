@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.khanhpham.smartkidz.SmartKidzApplication
+import com.khanhpham.smartkidz.data.models.AppUser
 import com.khanhpham.smartkidz.data.models.History
 import com.khanhpham.smartkidz.helpers.Response
 import com.khanhpham.smartkidz.repository.SmartKidRepository
@@ -18,9 +19,9 @@ class ResultViewModel(var history: History): ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    private val _historyItem = MutableLiveData<Response<History>>()
-    val historyItem: LiveData<Response<History>>
-        get() = _historyItem
+    private val _updatedUser = MutableLiveData<Response<AppUser>>()
+    val updatedUser: LiveData<Response<AppUser>>
+        get() = _updatedUser
 
     init {
         SmartKidzApplication.instance.component.inject(this)
@@ -38,9 +39,9 @@ class ResultViewModel(var history: History): ViewModel() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    _historyItem.value = Response.succeed(it, true)
+                    _updatedUser.value = Response.succeed(it, true)
                 },{
-                    _historyItem.value = Response.error(it)
+                    _updatedUser.value = Response.error(it)
                 })
         )
     }

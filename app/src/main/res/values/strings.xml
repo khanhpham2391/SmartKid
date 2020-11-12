@@ -24,4 +24,6 @@
     <string name="finish">FINISH</string>
     <string name="next_question">Next Question</string>
     <string name="profile">Profile</string>
+    <string name="no_icon_available">No Icon Available!</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

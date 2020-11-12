@@ -21,9 +21,7 @@ import com.khanhpham.smartkidz.databinding.ItemDifficultyBinding
 import com.khanhpham.smartkidz.databinding.ItemPreviewGameBinding
 import kotlinx.coroutines.selects.select
 
-class GameViewHolder (val itemPreviewGameBinding: ItemPreviewGameBinding): RecyclerView.ViewHolder(itemPreviewGameBinding.root){
-
-}
+class GameViewHolder (val itemPreviewGameBinding: ItemPreviewGameBinding): RecyclerView.ViewHolder(itemPreviewGameBinding.root)
 
 class GameAdapter (private var gameList: ArrayList<Games>): RecyclerView.Adapter<GameViewHolder>() {
 
@@ -51,7 +49,7 @@ class GameViewModel{
     companion object{
         @JvmStatic
         @BindingAdapter("imageUrl", "placeholder")
-        fun loadImage(view: ImageView, imageUrl: String?, placeholder: Drawable){
+        fun loadGameImage(view: ImageView, imageUrl: String?, placeholder: Drawable){
             if (!imageUrl.isNullOrEmpty()){
                 Glide.with(view.context).load(GamesData.urlConvert(imageUrl)).into(view)
             } else {

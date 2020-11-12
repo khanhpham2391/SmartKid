@@ -1,11 +1,12 @@
-package com.khanhpham.smartkidz.ui.game.gamePlay
+package com.khanhpham.smartkidz.ui.profile.editProfile
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.khanhpham.smartkidz.SmartKidzApplication
-import com.khanhpham.smartkidz.data.models.GameData
-import com.khanhpham.smartkidz.data.models.GameDetails
+import com.khanhpham.smartkidz.data.GamesData
+import com.khanhpham.smartkidz.data.models.AppUser
 import com.khanhpham.smartkidz.helpers.Response
 import com.khanhpham.smartkidz.repository.SmartKidRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,19 +14,20 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class PlayViewModel(private val gameData: GameData): ViewModel() {
+class EditViewModel(val appUser: AppUser): ViewModel() {
     @Inject
-    lateinit var smartKidRepository: SmartKidRepository
+    lateinit var repository: SmartKidRepository
 
     private val compositeDisposable = CompositeDisposable()
 
-    private val _gameDataList =  MutableLiveData<Response<List<GameDetails>>>()
-    val gameDataList: LiveData<Response<List<GameDetails>>>
-        get() = _gameDataList
+    private val _updatedUser = MutableLiveData<Response<AppUser>>()
+    val updatedUser: LiveData<Response<AppUser>>
+        get() = _updatedUser
 
     init {
         SmartKidzApplication.instance.component.inject(this)
-        fetchGameDataList()
+        Log.d("user in EditActivity","${GamesData.user}")
+        createHistory()
     }
 
     override fun onCleared() {
@@ -33,20 +35,16 @@ class PlayViewModel(private val gameData: GameData): ViewModel() {
         compositeDisposable.clear()
     }
 
-    private fun fetchGameDataList() {
+    private fun createHistory() {
         compositeDisposable.add(
-            smartKidRepository.getGamePlay(gameData.game,gameData.topic,gameData.diff)
+            repository.createUser(appUser)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe {
-                    _gameDataList.value = Response.loading(true)
-                }
                 .subscribe({
-                    _gameDataList.value = Response.succeed(it,true)
+                    _updatedUser.value = Response.succeed(it, true)
                 },{
-                    _gameDataList.value = Response.error(it)
+                    _updatedUser.value = Response.error(it)
                 })
         )
     }
-
 }

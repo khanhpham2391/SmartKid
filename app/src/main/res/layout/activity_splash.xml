@@ -17,50 +17,125 @@
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/background" />
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/loginBoard"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/whiteTransparentButton"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/whiteTransparentButton"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/rancho"
-            android:text="@string/choose_a_username"
-            android:textColor="@color/design_default_color_on_secondary"
-            android:textSize="18sp"
-            android:labelFor="@+id/etUsername"/>
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rancho"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rancho"
+                android:gravity="center"
+                android:text="Please enter your name"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shadow_press"
-            android:fontFamily="@font/rancho"
-            android:text="@string/go"
-            android:textColor="@android:color/primary_text_light"
-            android:textSize="24sp" />
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rancho"
+                    android:hint="Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_shadow_press"
+                android:fontFamily="@font/rancho"
+                android:text="@string/go"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/loginBoard"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/whiteTransparentButton"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="16dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/rancho"-->
+<!--            android:text="@string/choose_a_username"-->
+<!--            android:textColor="@color/design_default_color_on_secondary"-->
+<!--            android:textSize="18sp"-->
+<!--            android:labelFor="@+id/etUsername"/>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etUsername"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:importantForAutofill="no" />-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnLogin"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/button_shadow_press"-->
+<!--            android:fontFamily="@font/rancho"-->
+<!--            android:text="@string/go"-->
+<!--            android:textColor="@android:color/primary_text_light"-->
+<!--            android:textSize="24sp" />-->
+<!--    </LinearLayout>-->
 
     <ProgressBar
         android:id="@+id/splash_fetch_progress"

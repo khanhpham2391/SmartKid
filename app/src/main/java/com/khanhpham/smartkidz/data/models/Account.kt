@@ -1,11 +1,13 @@
 package com.khanhpham.smartkidz.data.models
 
-data class AppUser (val id: Int ? = null, val username: String, val fullname: String ? = null, val gender: String?="female", val email: String?=null, val photo: String?=null, val scoreCollection: Collection<Score>?=null, val levelId: Level?=null) {
+data class AppUser (val id: Int ? = null, var username: String, var password:String?=null, var fullName: String ? = null, var gender: String?="female", var email: String?=null, var photo: String?=null, val scoreCollection: Collection<UserScore>?=null, val levelId: Level?=null) {
 }
 
 data class Level (val id: Int, val name: String, val requiredLevelScore: Int, val icon: String)
 
-data class Score(val id: Int, val score: Int, val appUser: AppUser, val game: Games)
+data class UserScore(val id: Int, val score: Int, val gameId: Int)
+
+data class IconImage(val id:Int, val url: String)
 
 enum class Gender(val value: Boolean) {
     Male(true),
