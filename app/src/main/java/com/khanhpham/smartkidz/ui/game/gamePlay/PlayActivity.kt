@@ -18,11 +18,13 @@ import com.khanhpham.smartkidz.R
 import com.khanhpham.smartkidz.SmartKidzApplication
 import com.khanhpham.smartkidz.data.EXTRA_GAME
 import com.khanhpham.smartkidz.data.EXTRA_POINT
+import com.khanhpham.smartkidz.data.FALSE
 import com.khanhpham.smartkidz.data.GamesData
 import com.khanhpham.smartkidz.data.models.Difficulty
 import com.khanhpham.smartkidz.data.models.GameData
 import com.khanhpham.smartkidz.data.models.GameDetails
 import com.khanhpham.smartkidz.helpers.Status
+import com.khanhpham.smartkidz.ui.game.GameActivity
 import com.khanhpham.smartkidz.ui.game.result.ResultActivity
 import kotlinx.android.synthetic.main.activity_play.*
 
@@ -96,6 +98,9 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener {
         content.visibility = View.GONE
         playError.visibility = View.VISIBLE
         playProgressBar.visibility = View.GONE
+        val intent = Intent(this@PlayActivity,GameActivity::class.java)
+        intent.putExtra(FALSE,1)
+        startActivity(intent)
         Log.d("PlayActivity","showError: $error")
     }
 

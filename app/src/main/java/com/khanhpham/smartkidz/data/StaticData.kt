@@ -22,4 +22,5 @@ object GamesData{
 
 const val EXTRA_GAME = "game"
 const val EXTRA_POINT = "correctAnswer"
+const val FALSE = "error"
 

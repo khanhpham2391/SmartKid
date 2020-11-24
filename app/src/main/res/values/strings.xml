@@ -16,7 +16,7 @@
     <string name="choose_a_username">Choose a username:</string>
     <string name="go">Go!</string>
     <string name="error_loading">Error loading!</string>
-    <string name="localhost">192.168.1.107</string>
+    <string name="localhost">172.16.64.234</string>
     <string name="next">Next</string>
     <string name="topic_background">topic background</string>
     <string name="seconds_remaining">seconds remaining:</string>

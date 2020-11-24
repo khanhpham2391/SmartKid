@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.khanhpham.smartkidz.R
 import com.khanhpham.smartkidz.data.EXTRA_GAME
+import com.khanhpham.smartkidz.data.FALSE
 import com.khanhpham.smartkidz.data.GamesData
 import com.khanhpham.smartkidz.data.models.Difficulty
 import com.khanhpham.smartkidz.data.models.GameData
@@ -57,6 +58,9 @@ class GameActivity : AppCompatActivity() {
         gameViewPager.registerOnPageChangeCallback(swipe)
         btnBack.setOnClickListener(back)
         btnNext.setOnClickListener(next)
+        if (intent.getIntExtra(FALSE,0)==1){
+            Toast.makeText(this,"You are not eligible for this topic, upgrade your level",Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun viewPagerManager() {
